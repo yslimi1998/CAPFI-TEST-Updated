@@ -4,7 +4,7 @@
 
 Ce projet est une application web développée avec Java 17, Angular 15 et Spring Boot, suivant une architecture microservices avec API Gateway, Eureka Server
 , et Actuator. L'objectif de l'application est de permettre aux utilisateurs de visualiser une liste de films à partir d'une source de données chargée via
-une base de données mémoire H2 et des services web en Java EE.
+une base de données en mémoire H2 et des services web en Java EE.
 
 
 
