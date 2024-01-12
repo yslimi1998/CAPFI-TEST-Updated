@@ -42,7 +42,7 @@ une base de données en mémoire H2 et des services web en Java EE.
 3. Lancer l'application avec Docker Compose :
 
     ```bash
-    docker-compose up --build
+    docker-compose up -d --build
 
     ```
 
