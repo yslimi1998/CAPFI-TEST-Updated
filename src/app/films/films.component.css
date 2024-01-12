@@ -1,0 +1,59 @@
+
+.card-container {
+    margin-top: 50px;
+  }
+  
+  .custom-card {
+    width: 120%;
+    margin-left: -10%; 
+  }
+  
+  .custom-card-header {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  
+  .custom-card-body {
+    padding: 20px;
+  }
+  
+  .custom-card-title {
+    font-size: 24px;
+  }
+  .column-with-margin {
+    margin-left: 10px; 
+    white-space: nowrap; 
+  }
+
+.arrow-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  color: #007bff; 
+}
+
+.arrow-button:hover {
+  text-decoration: underline; 
+}
+
+.arrow-button:disabled {
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.arrow-icon {
+  font-size: 18px;
+  margin-right: 5px;
+}
+.custom-button-spacing {
+  margin-right: 10px; 
+}

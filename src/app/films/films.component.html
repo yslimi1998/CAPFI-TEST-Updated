@@ -1,0 +1,113 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card custom-card">
+          <div class="card-header custom-card-header">
+            <h4 class="card-title custom-card-title">Film Search</h4>
+          </div>
+          <div class="card-body custom-card-body">
+            <form [formGroup]="filmsSearch" (ngSubmit)="searchFilms()">
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="primaryTitle">Primary Title</label>
+                  <input type="text" class="form-control" formControlName="primaryTitle" />
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="originalTitle">Original Title</label>
+                  <input type="text" class="form-control" formControlName="originalTitle" />
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="startYear">Start Year</label>
+                  <input type="number" class="form-control" id="modalStartYear" formControlName="startYear" />
+                </div>
+              </div>
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary custom-button-spacing">Search</button>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addFilmModal">Add Film</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="card custom-card">
+            <div class="card-header custom-card-header d-flex justify-content-between align-items-center">
+              <h4 class="card-title custom-card-title">Film Data</h4>
+              <button type="button" class="btn btn-outline-light" (click)="filter()">
+                <i class="fa fa-filter"></i> Filter
+              </button>
+            </div>
+          </div>
+          
+<div class="pagination">
+    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1" class="arrow-button">
+      <span class="arrow-icon">&lt;</span> Previous
+    </button>
+    <span>{{ currentPage }} / {{ filmsResponse.totalPages }}</span>
+    <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === filmsResponse.totalPages || filmsResponse.totalPages === 0" class="arrow-button">
+      Next <span class="arrow-icon">&gt;</span>
+    </button>
+  </div>
+          <div class="card-body custom-card-body">
+            <ngx-datatable class="bootstrap expandable"
+                           [rows]="filmsResponse.films"
+                           [columnMode]="'force'"
+                           [headerHeight]="50"
+                           [footerHeight]="50"
+                           [rowHeight]="'auto'"
+                           [externalPaging]="true"
+                           [count]="filmsResponse.totalElements"
+                           [offset]="(filmsResponse.totalPages - 1) * filmsResponse.totalElements"
+                           [limit]="filmsResponse.totalElements">
+          <ngx-datatable-column name="TConst" prop="tconst"></ngx-datatable-column>
+          <ngx-datatable-column name="Title Type" prop="titleType"></ngx-datatable-column>
+          <ngx-datatable-column name="Primary Title" prop="primaryTitle" [width]="200"></ngx-datatable-column>
+          <ngx-datatable-column name="Original Title" prop="originalTitle" [width]="200"></ngx-datatable-column>
+          <ngx-datatable-column name="Is Adult" prop="adult"></ngx-datatable-column>
+          <ngx-datatable-column name="Start Year" prop="startYear"></ngx-datatable-column>
+          <ngx-datatable-column name="End Year" prop="endYear"></ngx-datatable-column>
+          <ngx-datatable-column name="Runtime" prop="runtimeMinutes"></ngx-datatable-column>
+          <ngx-datatable-column name="Genres" prop="genres" class="column-with-margin" [width]="250"></ngx-datatable-column>
+        </ngx-datatable>
+      </div>
+    </div>
+  </div>
+  
+
+
+<div class="modal fade" id="addFilmModal" tabindex="-1" role="dialog" aria-labelledby="addFilmModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addFilmModalLabel">Add Film</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="addFilmForm" (ngSubmit)="addFilm()">
+            <div class="form-group">
+              <label for="modalPrimaryTitle">Primary Title</label>
+              <input type="text" class="form-control" id="modalPrimaryTitle" formControlName="primaryTitle" />
+            </div>
+            <div class="form-group">
+              <label for="modalOriginalTitle">Original Title</label>
+              <input type="text" class="form-control" id="modalOriginalTitle" formControlName="originalTitle" />
+            </div>
+            <div class="form-group">
+              <label for="modalStartYear">Start Year</label>
+              <input type="number" class="form-control" id="modalStartYear" formControlName="startYear" />
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+

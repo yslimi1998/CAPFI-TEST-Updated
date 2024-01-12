@@ -1,0 +1,25 @@
+.container {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .display-4 {
+    color: #007BFF;
+  }
+  
+  .lead {
+    font-size: 1.25rem;
+    color: #6C757D;
+  }
+  
+  .card {
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    max-width: 300px;
+  }
+  
+  .card-img-top {
+    object-fit: cover; 
+  }
+  
