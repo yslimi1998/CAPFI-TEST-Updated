@@ -1,0 +1,9 @@
+services:
+
+  angular-front-end:
+    build: ./capfi-angular-frontend
+    container_name: angular-front-end
+    ports:
+      - '80:80'
+    expose:
+      - '80'
