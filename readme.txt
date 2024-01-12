@@ -21,7 +21,8 @@ une base de données en mémoire H2 et des services web en Java EE.
 
 1. Clonez ce dépôt :
 
-    git clone [lien-vers-le-repo]
+    git clone https://github.com/yslimi1998/CAPFI-TEST-Updated
+
     cd Test-Capfi-App
     
 2. Générez les fichiers JAR pour les microservices :
@@ -39,13 +40,12 @@ une base de données en mémoire H2 et des services web en Java EE.
     cd ..
     
 
-3. Lancer l'application avec Docker Compose :
+3. Lancer l'application avec Docker Compose pour le backend   :
 
     ```bash
     docker-compose up -d --build
 
     ```
-
 4. Accédez à l'application dans votre navigateur :
 
    - Frontend: http://localhost:80
@@ -53,7 +53,7 @@ une base de données en mémoire H2 et des services web en Java EE.
    - Discovery Service (Eureka Server): http://localhost:8761
    - API Gateway: http://localhost:8888/FILM-SERVICE/capfi
 
-   Vous pouvez ajouter n'importe quel chemin du Film Service à la fin de l'URL, par exemple : http://localhost:8888/FILM-SERVICE/votre-chemin
+   Vous pouvez ajouter n'importe quel chemin du Film Service à la fin de l'URL, par exemple : http://localhost:8888/FILM-SERVICE/END-POINT
 
 ## Configuration
 
