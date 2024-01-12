@@ -1,27 +1,29 @@
-# CapfiAngularFrontend
+# Projet Test-Capfi-App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
 
-## Development server
+Pour exécuter la partie Frontend de l'application, suivez ces étapes simples:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Assurez-vous d'avoir Docker installé sur votre machine.
 
-## Code scaffolding
+2. Positionnez-vous dans le répertoire 'capfi-angular-frontend' en utilisant la commande suivante:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    ```bash
+    cd chemin/vers/capfi-angular-frontend
+    ```
 
-## Build
+3. Exécutez la commande Docker suivante pour construire et démarrer le conteneur en arrière-plan:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    ```bash
+    docker-compose up -d --build
+    ```
+   
+4. Vous pouvez maintenant accéder à l'application Frontend en ouvrant votre navigateur et en visitant:
 
-## Running unit tests
+    ```
+    http://localhost:80
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+C'est tout! Votre application Frontend devrait maintenant être accessible. Assurez-vous d'avoir les ports nécessaires ouverts selon votre configuration.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
