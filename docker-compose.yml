@@ -1,5 +1,4 @@
 services:
-
   angular-front-end:
     build: .
     container_name: angular-front-end
