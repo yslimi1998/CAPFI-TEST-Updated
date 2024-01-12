@@ -14,11 +14,5 @@ import java.util.Optional;
 
 @Repository
 public interface FilmRepository extends JpaRepository<Film,String>, JpaSpecificationExecutor<Film> {
-    boolean existsByTconst(String tconst);
-    @Query("SELECT f FROM Film f " +
-            "WHERE (:primaryTitle IS NULL OR LOWER(f.primaryTitle) LIKE LOWER(CONCAT('%', :primaryTitle, '%'))) " +
-            "AND (:originalTitle IS NULL OR LOWER(f.originalTitle) LIKE LOWER(CONCAT('%', :originalTitle, '%'))) " +
-            "AND (:startYear IS NULL OR f.startYear = :startYear)")
-    Page<Film> findAllByCustomCriteria(String primaryTitle, String originalTitle, Integer startYear, Pageable pageable);
     Optional<Film> findByPrimaryTitleIgnoreCaseAndOriginalTitleIgnoreCaseAndStartYear(String primaryTitle, String originalTitle, int startYear);
 }
